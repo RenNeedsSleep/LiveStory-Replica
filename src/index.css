@@ -16,6 +16,32 @@ body{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   align-content: center;
   padding: 10px;
+  display: flex;
+  justify-content: left;
+}
+
+.stories{
+  border-style: solid;
+  border-color: magenta;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  margin-left: 5px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.stories:hover{
+  transition: background-color 0.5 ease;
+  background-color: rgb(229, 229, 229);
+}
+
+.stories img{
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .AddButton{
@@ -28,6 +54,7 @@ body{
   height: 50px;
   width: 50px;
   cursor: pointer;
+  margin-right: 8px;
 }
 
 .AddButton:hover{
@@ -62,4 +89,13 @@ input[type="file"]::file-selector-button {
 
 input[type="file"]::file-selector-button:hover {
   background-color: #45a049;
+}
+
+
+.storylist{
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 8px;
 }
