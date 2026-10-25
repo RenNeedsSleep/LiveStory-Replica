@@ -20,6 +20,7 @@ function StoryView({imageId, imageList}){
         return () => clearTimeout(timerId);
             },[imageId, currentImage, imageList])
 
+    
         //animation-name: bar;
         //animation-duration: 3s;
         //animation-timing-function: ease-in-out;
@@ -33,7 +34,11 @@ function StoryView({imageId, imageList}){
                     completed={index < currentImage}/>
                 ))}
             </div>
-            <img id = 'view-img' src ={imageList[currentImage]}/>
+            <div className = "options">
+                <button id = 'left'>&lt;</button>
+                <img id = 'view-img' src ={imageList[currentImage]}/>
+                <button id = 'right'>&gt;</button>
+            </div>
         </div>
     )
 }
