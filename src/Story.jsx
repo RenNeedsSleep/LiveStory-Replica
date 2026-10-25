@@ -1,7 +1,7 @@
 import React,{useState,useRef,useEffect,createContext} from "react"
 import Stories from "./Stories"
 import StoryView from "./StoryView";
-import ProgressBar from "./progressBar";
+import ProgressBar from "./ProgressBar";
 
 function Story(){
 
@@ -14,12 +14,12 @@ function Story(){
         setSelectedButton(button);
     }
 
-    useEffect(()=>{
+    /*useEffect(()=>{
         return ()=>{
             if (imageUrl) URL.revokeObjectURL(imageUrl);
         };
-    },[imageUrl]) //when a new component is mounted and a value changes, i.e in this case the image url changes everytime a new image is selected
-    /*
+    },[imageUrl]) when a new component is mounted and a value changes, i.e in this case the image url changes everytime a new image is selected
+
         use ref can be used to manipulate or rather mutate DOM elements such as html and stuff so
         i used useRef and got hold onto the input using a ref of the constant i created. when ever a person clicks
         on the button it makes a function to click on the input which is hidden.

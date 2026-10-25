@@ -11,7 +11,7 @@ function Stories({ imageUrl , selectedButton}){
             <button className = "stories" onClick={()=>{
                 selectedButton(imageUrl)
             }}>
-                <img id = 'story-img' src ={imageUrl} alt="stories"/>
+                <img id = 'story-img' src ={imageUrl} alt="select an image"/>
             </button>
         </div>
     )
