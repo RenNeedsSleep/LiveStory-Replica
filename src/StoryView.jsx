@@ -6,6 +6,18 @@ function StoryView({imageId, imageList}){
     const [currentImage, setImage] = useState(-1);
 
 
+    function movePictureLeft(current){
+        if(current > 0){
+            setImage(currentImage - 1);
+        }
+    }
+
+    function movePictureRight(current){
+        if(current < imageList.length - 1){
+            setImage(currentImage + 1);
+        }
+    }
+
      useEffect(() => {
         setImage(imageList.indexOf(imageId))
     },[imageList, imageId]) //useEffect with this makes sure a new calc happens when value changes
@@ -20,7 +32,6 @@ function StoryView({imageId, imageList}){
         return () => clearTimeout(timerId);
             },[imageId, currentImage, imageList])
 
-    
         //animation-name: bar;
         //animation-duration: 3s;
         //animation-timing-function: ease-in-out;
@@ -35,9 +46,9 @@ function StoryView({imageId, imageList}){
                 ))}
             </div>
             <div className = "options">
-                <button id = 'left'>&lt;</button>
+                <button id = 'left' onClick={()=>{movePictureLeft(currentImage)}}>&lt;</button>
                 <img id = 'view-img' src ={imageList[currentImage]}/>
-                <button id = 'right'>&gt;</button>
+                <button id = 'right' onClick={()=>{movePictureRight(currentImage)}}>&gt;</button>
             </div>
         </div>
     )
