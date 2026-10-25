@@ -1,6 +1,8 @@
 import React,{useState,useRef,useEffect,createContext} from "react"
 import Stories from "./Stories"
 import StoryView from "./StoryView";
+import ProgressBar from "./progressBar";
+
 function Story(){
 
 
@@ -48,7 +50,7 @@ function Story(){
                     </li>)}
                 </ul>
             </div>
-            <StoryView imageId={selectedButton}/>
+            <StoryView imageId={selectedButton} imageList={imageUrl}/>
         </div>
     )
 }

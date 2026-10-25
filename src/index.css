@@ -66,6 +66,10 @@ body{
 
 .Tab{
   background-color: white;
+  display:flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
   margin-top: 20px;
   height: 540px;
   width: 500px;
@@ -74,10 +78,17 @@ body{
   border-radius: 20px;
   border-color: rgb(159, 93, 64);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  align-content: center;
-  justify-content: center;
   padding: 10px;
   box-shadow: 1px 2px 5px rgb(59, 44, 44);
+  gap: 30px;
+}
+
+.Tab img{
+  display: flex;
+  height: 100%;
+  width: 75%;
+  object-fit: cover;
+
 }
 
 input[type="file"]::file-selector-button {
@@ -97,3 +108,30 @@ input[type="file"]::file-selector-button {
   gap: 8px;
 }
 
+@keyframes bar {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.progress{
+  transform-origin: left;
+  margin-top: 10px;
+  display: flex;
+  height: 4px;
+  width: 500px;
+  background-color: #b611a8;
+  animation-name: bar;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+}
+
+.progress-holder{
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+}
