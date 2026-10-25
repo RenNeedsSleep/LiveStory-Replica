@@ -1,11 +1,16 @@
 import React,{useState,useRef,useEffect,createContext} from "react"
 import Stories from "./Stories"
-
+import StoryView from "./StoryView";
 function Story(){
 
 
     const inputRef = useRef(null)
     const [imageUrl, setImageUrl] = useState([]);
+    const [selectedButton, setSelectedButton] = useState(null);
+
+    const handleSelectedButton = (button) =>{
+        setSelectedButton(button);
+    }
 
     useEffect(()=>{
         return ()=>{
@@ -25,20 +30,25 @@ function Story(){
     
         }
     }
-    return(
-        <div className="StoryButtons">
-            <button className="AddButton" onClick={()=>{
-                inputRef.current.click()
-            }}>+</button>
-            
-            <input id = 'imageInput' ref = {inputRef} type = "file" accept="image/*" hidden onChange={addStory}/>
 
-            <ul className="storylist">
-                {imageUrl.map((image,index)=>
-                <li key = {index}>
-                    <Stories imageUrl={image}/>
-                </li>)}
-            </ul>
+    
+    return(
+        <div>
+            <div className="StoryButtons">
+                <button className="AddButton" onClick={()=>{
+                    inputRef.current.click()
+                }}>+</button>
+                
+                <input id = 'imageInput' ref = {inputRef} type = "file" accept="image/*" hidden onChange={addStory}/>
+
+                <ul className="storylist">
+                    {imageUrl.map((image,index)=>
+                    <li key = {index}>
+                        <Stories imageUrl={image} selectedButton={handleSelectedButton}/>
+                    </li>)}
+                </ul>
+            </div>
+            <StoryView imageId={selectedButton}/>
         </div>
     )
 }

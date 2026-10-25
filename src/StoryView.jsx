@@ -1,8 +1,10 @@
+import React, {useContext} from 'react';
 
-function StoryView(){
+function StoryView({imageId,imageCount}){
+
     return(
         <div className="Tab">
-            <p>Image</p>
+            <p>ID: {imageId} </p>
         </div>
     )
 }

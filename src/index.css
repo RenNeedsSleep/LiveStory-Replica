@@ -18,7 +18,7 @@ body{
   padding: 10px;
   display: flex;
   justify-content: left;
-  overflow: scroll;
+  overflow:visible;
 }
 
 .stories{
@@ -58,6 +58,7 @@ body{
   margin-right: 8px;
 }
 
+
 .AddButton:hover{
   transition: background-color 0.5 ease;
   background-color: rgb(229, 229, 229);
@@ -95,3 +96,4 @@ input[type="file"]::file-selector-button {
   margin: 0;
   gap: 8px;
 }
+
